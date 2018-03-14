@@ -64,6 +64,7 @@ const props = {
 export default {
   props: props,
   mounted() {
+	this.options.bounds = new L.LatLngBounds(L.latLng(-49.875, 34.25), L.latLng(-206, 221))
     const options = this.options;
     const otherPropertytoInitialize = [ "attribution", "token", "detectRetina", "opacity", "zIndex","bounds" ];
     for (var i = 0; i < otherPropertytoInitialize.length; i++) {
@@ -72,7 +73,7 @@ export default {
         options[propName] = this[propName];
       }
     }
-	this.options.bounds = L.LatLngBounds(L.latLng(-49.875, 34.25), L.latLng(-206, 221))
+	
     this.mapObject = this.tileLayerClass(this.url, options);
     eventsBinder(this, this.mapObject, events);
     propsBinder(this, this.mapObject, props);
