@@ -45,6 +45,10 @@ const props = {
     type: Number,
     default: 1
   },
+  bounds: {
+    custom: true,
+    default: undefined,
+  },
   options: {
     type: Object,
     default: function() {
@@ -61,7 +65,7 @@ export default {
   props: props,
   mounted() {
     const options = this.options;
-    const otherPropertytoInitialize = [ "attribution", "token", "detectRetina", "opacity", "zIndex" ];
+    const otherPropertytoInitialize = [ "attribution", "token", "detectRetina", "opacity", "zIndex","bounds" ];
     for (var i = 0; i < otherPropertytoInitialize.length; i++) {
       const propName = otherPropertytoInitialize[i];
       if(this[propName] !== undefined) {
