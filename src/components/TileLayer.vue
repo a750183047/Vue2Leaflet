@@ -2,7 +2,7 @@
 </template>
 
 <script>
-
+import L from 'leaflet';
 import propsBinder from '../utils/propsBinder.js';
 import eventsBinder from '../utils/eventsBinder.js';
 
@@ -72,6 +72,7 @@ export default {
         options[propName] = this[propName];
       }
     }
+	this.options.bounds = L.LatLngBounds(L.latLng(-49.875, 34.25), L.latLng(-206, 221))
     this.mapObject = this.tileLayerClass(this.url, options);
     eventsBinder(this, this.mapObject, events);
     propsBinder(this, this.mapObject, props);

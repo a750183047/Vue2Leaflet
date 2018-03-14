@@ -64,7 +64,7 @@ config.module = {
   ]
 };
 
-if (false) {
+if (true) {
   config.output.filename = "vue2-leaflet.min.js"
   config.devtool = '#source-map';
 
